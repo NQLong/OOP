@@ -4,26 +4,26 @@
 
 using namespace std;
 
-Ingridient::Ingridient() {}
+Ingridient::Ingridient(){}
 
 Ingridient::Ingridient(string name, string measure, double quantity)
 {
     this->name = name;
     this->measureUnit = measure;
-    this->stock = quantity;
+    this->quantity = quantity;
 }
 
 Ingridient::Ingridient(const Ingridient &ingri)
 {
     this->name = ingri.name;
-    this->stock = ingri.stock;
+    this->quantity = ingri.quantity;
     this->measureUnit = ingri.measureUnit;
 }
 
 Ingridient &Ingridient::operator=(const Ingridient &ingri)
 {
     this->name = ingri.name;
-    this->stock = ingri.stock;
+    this->quantity = ingri.quantity;
     this->measureUnit = ingri.measureUnit;
     return *this;
 }
@@ -38,9 +38,9 @@ string Ingridient::getMeasureUnit()
     return measureUnit;
 }
 
-double Ingridient::getStock()
+double Ingridient::getQuantity()
 {
-    return stock;
+    return quantity;
 }
 
 void Ingridient::setName(string name)
@@ -51,16 +51,12 @@ void Ingridient::setMeasureUnit(string _measure)
 {
     measureUnit = _measure;
 }
-void Ingridient::setStock(double q)
+void Ingridient::setQuantity(double q)
 {
-    stock = q;
+    quantity = q;
 }
 
 string Ingridient::toString()
 {
-    return "Ingridient(name = " + name + ",measureUnit = " + measureUnit + ",quantity = " + to_string(stock) + ")";
+    return "Ingridient(name = " + name + ",measureUnit = " + measureUnit + ",quantity = " + to_string(quantity) + ")";
 }
-
-// void Ingridient::print(){
-
-// }

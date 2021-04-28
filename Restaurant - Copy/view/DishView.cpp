@@ -94,7 +94,6 @@ void DishView::DetailView(Dish *ptr)
 {
     cout << setw(5) << "" << setw(20) << "id :" << ptr->getId() << endl;
     cout << setw(5) << "" << setw(20) << "name :" << ptr->getName() << endl;
-    cout << setw(5) << "" << setw(20) << "price :" << ptr->getPrice() << endl;
     cout << setw(5) << "" << setw(20) << "Ingridient needed :" << endl;
     vector<IngridientQuantity> ingriList = ptr->getIngriList();
     int count2 = 0;

@@ -25,7 +25,6 @@ bool ClientView::createClientView()
     cout << "Successfully created client " << client_ptr->toString();
     return true;
 }
-
 void ClientView::filterClientView()
 {
     string name;

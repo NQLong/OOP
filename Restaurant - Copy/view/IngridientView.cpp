@@ -57,7 +57,7 @@ void IngridientView::listIngridientView()
 void IngridientView::DetailView(Ingridient *ptr)
 {
     cout << setw(5) << "" << setw(10) << "name :" << ptr->getName() << endl;
-    cout << setw(5) << "" << setw(10) << "Stock :" << ptr->getStock() << " "
+    cout << setw(5) << "" << setw(10) << "Stock :" << ptr->getQuantity() << " "
          << "(" << ptr->getMeasureUnit() << ")" << endl;
 }
 
@@ -104,20 +104,20 @@ void IngridientView::editIngridientView()
 }
 
 void IngridientView::deleteIngridientView()
-{}
-//     Ingridient *ingridient;
-//     string name;
-//     string confirm;
+{
+    Ingridient *ingridient;
+    string name;
+    string confirm;
 
-//     cout << "Ingridient 's name: ";
-//     cin >> name;
-//     // ingridient = this->controller->filterIngridient(name);
-//     cout << "Deleting confirmation?(Y/N)";
-//     cin >> confirm;
-//     if (confirm != "Y")
-//         return;
-//     else
-//     {
-//         this->controller->deleteIngridient(name);
-//     }
-// }
+    cout << "Ingridient 's name: ";
+    cin >> name;
+    // ingridient = this->controller->filterIngridient(name);
+    cout << "Deleting confirmation?(Y/N)";
+    cin >> confirm;
+    if (confirm != "Y")
+        return;
+    else
+    {
+        this->controller->deleteIngridient(name);
+    }
+}

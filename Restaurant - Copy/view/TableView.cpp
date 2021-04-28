@@ -54,7 +54,3 @@ void TableView::DetailView(Table *ptr)
     cout << setw(5) << "" << setw(20) << "Table's id: " << ptr->getId() << endl;
     cout << setw(5) << "" << setw(20) << "Table's capcity: " << ptr->getMaxCapacity() << endl;
 }
-
-void TableView::deleteTableView(){
-    cout<<"Delete a table";
-}

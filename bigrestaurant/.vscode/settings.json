@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "typeinfo": "cpp",
+        "string": "cpp",
+        "thread": "cpp",
+        "typeindex": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "*.tcc": "cpp",
+        "type_traits": "cpp",
+        "string_view": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "iosfwd": "cpp"
+    }
+}

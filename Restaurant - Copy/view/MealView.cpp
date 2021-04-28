@@ -94,8 +94,6 @@ void MealView::DetailView(Meal *ptr)
 {
     cout
         << setw(5) << ""
-        << "id : " << ptr->getId() << endl
-        << setw(5) << ""
         << "Table's id : " << ptr->getTable()->getId() << endl
         << setw(5) << ""
         << "date : " << ptr->getDate() << endl
@@ -117,41 +115,8 @@ void MealView::DetailView(Meal *ptr)
     {
         cout
             << setw(8) << "" << ++count2 << ". "
-            << (it2)->getNumber() << " "
+            << (it2)->getQuantity() << " "
             << (it2)->getDish()->getName()
             << endl;
     }
-}
-
-void MealView::filterMealView()
-{
-    Meal *ptr;
-    int id;
-    cout << "Search a meal" << endl;
-    cout << "meal's id : ";
-    cin >> id;
-    clearCin();
-    ptr = this->controller->filterMeal(id);
-    if (ptr)
-        this->DetailView(ptr);
-    else
-        cout << "Meal doesn't exists" << endl;
-}
-
-void MealView::deleteMealView()
-{
-    Meal *ptr;
-    int id ,resp;
-    cout << "Search a meal" << endl;
-    cout << "meal's id : ";
-    cin >> id;
-    cout<<"haha";
-    
-    this->controller->deleteMeal(id);
-    // if (resp == this->controller->SUCCESS)
-    //     cout << "Success";
-    // else if (resp == this->controller->NON_EXISTING_OBJECT)
-    //     cout << "Meal with id " << id << "doesn't exist.";
-    // else
-    //     cout << "Fail. Something has gon wrong.";
 }

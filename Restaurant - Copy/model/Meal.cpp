@@ -30,7 +30,7 @@ Meal::Meal(Table *table, vector<ServedDish> dishes, int date, int start, int end
     confirmed = false;
     for (vector<ServedDish>::iterator dish = dishes.begin(); dish != dishes.end(); dish++)
     {
-        this->price += dish->getDish()->getPrice() * dish->getNumber();
+        this->price += dish->getDish()->getPrice() * dish->getQuantity();
     }
 }
 
@@ -147,7 +147,7 @@ void Meal::removeDish(Dish *dish)
     {
         if (dish == it->getDish())
         {
-            this->price -= it->getDish()->getPrice() * it->getNumber();
+            this->price -= it->getDish()->getPrice() * it->getQuantity();
             this->dishes.erase(it);
         }
     }

@@ -9,7 +9,7 @@ class ServedDish
 {
 private:
     Dish* dish;
-    int number;
+    int quantity;
 
 public:
     ServedDish();
@@ -18,8 +18,8 @@ public:
     ServedDish& operator=(const ServedDish&);
 
     void setDish(Dish*);
-    void setNumber(int);
-    int getNumber();
+    void setQuantity(int);
+    int getQuantity();
     Dish* getDish();
 
     string toString();

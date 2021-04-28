@@ -5,36 +5,36 @@
 ServedDish::ServedDish(const ServedDish &other)
 {
     this->dish = other.dish;
-    this->number = other.number;
+    this->quantity = other.quantity;
 }
 ServedDish &ServedDish::operator=(const ServedDish &other)
 {
     this->dish = other.dish;
-    this->number = other.number;
+    this->quantity = other.quantity;
     return *this;
 }
 
 Dish *ServedDish::getDish() { return dish; }
 
-int ServedDish::getNumber() { return number; }
+int ServedDish::getQuantity() { return quantity; }
 
 void ServedDish::setDish(Dish *_dish)
 {
     dish = _dish;
 }
 
-void ServedDish::setNumber(int n)
+void ServedDish::setQuantity(int n)
 {
-    number = n;
+    quantity = n;
 }
 
 ServedDish::ServedDish(Dish *_dish, int n)
 {
     dish = _dish;
-    number = n;
+    quantity = n;
 }
 
 string ServedDish::toString()
 {
-    return "ServedDish(dish = " + dish->toString() + ", quantity = " + to_string(number) + ")";
+    return "ServedDish(dish = " + dish->toString() + ", quantity = " + to_string(quantity) + ")";
 }

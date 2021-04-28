@@ -111,16 +111,6 @@ bool View::mainView()
     case 17:
         this->clientView->filterClientView();
         return true;
-    case 18:
-        this->mealView->filterMealView();
-        return true;
-
-    case 19:
-        this->ingridientView->deleteIngridientView();
-
-    case 24:
-        this->mealView->deleteMealView();
-        return true;
     default:
         return false;
         break;
@@ -165,21 +155,8 @@ void View::commandsView()
         << "\t15: Search a table"
         << "16: Search a waiter" << endl
         << setw(40) << left
-        << "\t17: Search a client"
-        << "18: Search a meal" << endl;
-
-    cout
-        << endl
-        << "Delete commands group:" << endl
-        << setw(40) << left
-        << "\t19: delete an ingridient"
-        << "20: delete a dish" << endl
-        << setw(40) << left
-        << "\t21: delete a table"
-        << "22: delete a waiter" << endl
-        << setw(40) << left
-        << "\t23: delete a client"
-        << "24: delete a meal" << endl;
+        << "\t17: Search a client" << endl;
+    // << "12: Search a meal" << endl;
 
     cout
         << endl
