@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "list": "cpp",
+        "iostream": "cpp",
+        "iosfwd": "cpp",
+        "string_view": "cpp",
+        "string": "cpp",
+        "typeinfo": "cpp",
+        "istream": "cpp",
+        "xstring": "cpp",
+        "iomanip": "cpp",
+        "ostream": "cpp",
+        "ios": "cpp",
+        "algorithm": "cpp",
+        "system_error": "cpp"
+    }
+}
