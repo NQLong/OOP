@@ -1,21 +1,5 @@
 #ifndef E5D175CB_186B_4FC8_8D89_5FC035CBAE9B
 #define E5D175CB_186B_4FC8_8D89_5FC035CBAE9B
-// class Reservation:
-//     def __init__(self, id, people_count, notes, customer):
-//         reservation_id = id
-//         time_of_reservation = datetime.now()
-//         people_count = people_count
-//         status = ReservationStatus.REQUESTED
-//         notes = notes
-//         checkin_time = datetime.now()
-//         customer = customer
-//         tables = []
-//         notifications = []
-
-//     def update_people_count(self, count):
-//         None
-
-#include <ctime>
 
 #include "../../Header/Constraint/constraint.h"
 #include "../Actor/Customer.h"
@@ -36,15 +20,15 @@ private:
     int people_count;
     ReservationStatus status = R_REQUESTED;
     string notes;
-    time_t time_of_reservation;
+    DayTime time_of_reservation;
     time_t checkin_time;
-    static list<Reservation> reservations;
+
+    static int new_id;
 
 public:
     Reservation();
     ~Reservation();
     Reservation(
-        int _reservation_id,
         time_t _time_of_reservation,
         int _people_count,
         ReservationStatus _status,
@@ -53,8 +37,7 @@ public:
         int _customer_id,
         list<int> _table_ids,
         list<int> _notification_ids)
-        : reservation_id(_reservation_id),
-          time_of_reservation(_time_of_reservation),
+        : time_of_reservation(_time_of_reservation),
           people_count(_people_count),
           status(_status),
           notes(_notes),
@@ -63,14 +46,10 @@ public:
           table_ids(_table_ids),
           notification_ids(_notification_ids) {}
 
-    
-
     bool update_people_count(int);
 
-    static Reservation input_reservation(int);
+    static Reservation input(int);
 
-    static bool add_reservation(Reservation);
-    //
     static list<Reservation> *getReservations();
 
     static void setReservations(list<Reservation> reservations);

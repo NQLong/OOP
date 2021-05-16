@@ -20,17 +20,26 @@ private:
     int seat_id;
     list<MealItem> meal_items;
 
+    static int new_id;
+
 public:
+    static string class_name;
     Meal();
     ~Meal();
-    Meal(int _meal_id, int _seat_id) : meal_id(_meal_id), seat_id(_seat_id) {}
-    Meal(int _meal_id, int _seat_id, list<MealItem> _meal_items) : meal_id(_meal_id), seat_id(_seat_id), meal_items(_meal_items) {}
+    Meal(int _seat_id) : meal_id(new_id++), seat_id(_seat_id) {}
+    Meal(int _seat_id, list<MealItem> _meal_items) : meal_id(new_id++), seat_id(_seat_id), meal_items(_meal_items) {}
 
     double getPrice();
-    void pick_seat(Table*);
-    static Meal input( int);
+    TableSeat *pick_seat(Table *);
+    static Meal input(int menu, int table);
+
+    bool add_meal_item(int);
+    bool add_meal_item(MealItem);
+    bool remove_meal_item(MealItem);
+    bool remove_meal_item();
 
     int getMeal_id();
+    int get_id();
     void setMeal_id(int meal_id);
     list<MealItem> *getMeal_items();
     void setMeal_items(list<MealItem> meal_items);

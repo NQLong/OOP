@@ -47,6 +47,7 @@ public:
     bool update_quantity(int);
 
     int getMeal_item_id();
+    int get_id();
     void setMeal_item_id(int meal_item_id);
     int getQuantity();
     void setQuantity(int quantity);

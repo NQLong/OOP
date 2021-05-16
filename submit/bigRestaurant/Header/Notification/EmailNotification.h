@@ -21,6 +21,6 @@ public:
     string getEmail();
 
     void setEmail(string email);
-}
+};
 
 #endif /* BFC4C0F0_4337_42BC_A750_7E22D504F3AA */

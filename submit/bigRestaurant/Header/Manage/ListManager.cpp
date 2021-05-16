@@ -64,6 +64,20 @@ bool ListManager<T>::remove_element()
     cout << "Success\n";
     return true;
 }
+template <typename T>
+list<T> ListManager<T>::get_element_from_branch(int branch)
+{
+    list<T> nlst;
+    auto it = lst->begin();
+    int n = lst->size();
+    for (int i = 0; i < n; i++)
+    {
+        if (it->get_branch_id() == branch)
+            nlst.push_back(*it);
+        ++it;
+    }
+    return nlst;
+}
 
 template <typename T>
 bool ListManager<T>::remove_element(T t)

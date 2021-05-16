@@ -6,6 +6,7 @@ MealItem::MealItem()
 }
 MealItem::~MealItem() {}
 int MealItem::new_id = 0;
+string MealItem::class_name = "meal item";
 MenuItem *MealItem::get_menu_item()
 {
     ListManager<Menu> menus_manager(Storage::menus);
@@ -59,10 +60,10 @@ ostream &operator<<(ostream &os, const MealItem &meal_item)
 
 ostream &operator<<(ostream &os, const list<MealItem> &lst)
 {
-    char border = '#';
+    char border = '&';
     char inside_h_border = '-';
     char inside_v_border = '|';
-    int border_size = 120;
+    int border_size = 81;
     os
         << setw(border_size) << setfill(border) << ""
         << setfill(' ') << endl;
@@ -71,12 +72,12 @@ ostream &operator<<(ostream &os, const list<MealItem> &lst)
         << inside_v_border << setw(20) << left << "menu_id,section_id"
         << inside_v_border << setw(10) << left << "quantity"
         << inside_v_border << setw(30) << left << "        name"
-        << inside_v_border << setw(10) << left << "unit $" << border << endl
+        << inside_v_border << setw(10) << left << "unit price" << border << endl
         << border << setw(5) << left << " "
         << inside_v_border << setw(20) << left << "  item_id"
         << inside_v_border << setw(10) << left << ""
         << inside_v_border << setw(30) << left << ""
-        << inside_v_border << setw(10) << left << "" << border << endl
+        << inside_v_border << setw(10) << left << "    ($)" << border << endl
         << setw(border_size) << setfill(border) << ""
         << setfill(' ');
     for (auto it = lst.begin(); it != lst.end(); it++)
@@ -84,14 +85,14 @@ ostream &operator<<(ostream &os, const list<MealItem> &lst)
         os
             << endl
             << border << setw(5) << left << it->meal_item_id
-            << inside_v_border << setw(20) << left << "(" + to_string(it->menu_item_id) + "," + to_string(it->menu_section_id) + "," + to_string(it->menu_item_id) + ")"
-            << inside_v_border << setw(15) << left << it->quantity;
+            << inside_v_border << setw(20) << left << "  (" + to_string(it->menu_id) + "," + to_string(it->menu_section_id) + "," + to_string(it->menu_item_id) + ")"
+            << inside_v_border << setw(10) << left << it->quantity;
         MealItem temp = *it;
         MenuItem *item = temp.get_menu_item();
         if (item)
             os
                 << inside_v_border << setw(30) << left << item->getTitle()
-                << inside_v_border << setw(15) << left << item->getPrice() << border << endl
+                << inside_v_border << setw(10) << left << item->getPrice() << border << endl
                 << border << setw(border_size - 2) << setfill(inside_h_border) << "" << border
                 << setfill(' ');
         ;
@@ -99,7 +100,7 @@ ostream &operator<<(ostream &os, const list<MealItem> &lst)
     os
         << endl
         << setw(border_size) << setfill(border) << ""
-        << setfill(' ') << endl;
+        << setfill(' ') ;
     return os;
 }
 
@@ -154,6 +155,11 @@ MealItem MealItem::input(int menu_id)
 //getter adnd setter
 
 int MealItem::getMeal_item_id()
+{
+    return this->meal_item_id;
+}
+
+int MealItem::get_id()
 {
     return this->meal_item_id;
 }

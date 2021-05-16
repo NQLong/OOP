@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"name": "bigRestaurant",
+			"path": "."
+		}
+	],
+	"remoteAuthority": "wsl+Ubuntu-20.04",
+	"settings": {
+		"files.associations": {
+			"*.tpp": "cpp",
+			"array": "cpp",
+			"string_view": "cpp",
+			"initializer_list": "cpp",
+			"utility": "cpp",
+			"ostream": "cpp",
+			"iomanip": "cpp",
+			"iosfwd": "cpp",
+			"list": "cpp"
+		}
+	}
+}

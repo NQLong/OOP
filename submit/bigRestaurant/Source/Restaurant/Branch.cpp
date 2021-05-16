@@ -13,6 +13,11 @@ bool Branch::modify_menu()
     return true;
 }
 
+Menu *Branch::get_menu()
+{
+    return ListManager<Menu>(Storage::menus).get_element(this->menu_id);
+}
+
 bool Branch::add_menu()
 {
     if (this->menu_id != -1 && get_menu())
@@ -50,6 +55,11 @@ Branch Branch::inputBranch()
 }
 
 int Branch::getBranch_id()
+{
+    return this->branch_id;
+}
+
+int Branch::get_id()
 {
     return this->branch_id;
 }
@@ -99,12 +109,5 @@ void Branch::setMenu_id(int menu_id)
     this->menu_id = menu_id;
 }
 
-Menu *Branch::get_menu()
-{
-    if (this->menu_id == -1)
-        return NULL;
-    ListManager<Menu> menus_manager(Storage::menus);
-    return menus_manager.get_element(this->menu_id);
-}
 
 int Branch::new_id = 0;

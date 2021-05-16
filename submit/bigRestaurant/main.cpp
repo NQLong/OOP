@@ -6,7 +6,8 @@
 #include "Header/Restaurant/Table.h"
 #include "Header/Restaurant/Restaurant.h"
 #include "Header/Meal/MealItem.h"
-
+#include "Header/Meal/Meal.h"
+#include "Header/Order/Order.h"
 int main()
 {
 
@@ -40,7 +41,7 @@ int main()
                                  MenuItem("Heaven pork fry", "Fry you wana try", 17),
                              }),
 
-                 MenuSection("Heaven soup", "Fries from heaven",
+                 MenuSection("Heaven soup", "Soups from heaven",
                              {
                                  MenuItem("Heaven chiken soup", "Fry you wana try", 15),
                                  MenuItem("Heaven fish soup", "Fry you wana try", 16),
@@ -52,7 +53,7 @@ int main()
 
     Storage::menus = &menus;
     list<Table> tables = {
-        Table(1, 2, {
+        Table(1, 0, {
 
                         TableSeat(S_ACCESSIBLE),
                         TableSeat(S_ACCESSIBLE),
@@ -60,15 +61,87 @@ int main()
                         TableSeat(S_ACCESSIBLE),
                         TableSeat(S_ACCESSIBLE),
                         TableSeat(S_ACCESSIBLE),
-                    })};
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                    }),
+
+        Table(2, 0, {
+
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                    }),
+
+        Table(3, 0, {
+
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                    }),
+
+        Table(4, 0, {
+
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                    }),
+
+        Table(5, 0, {
+
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                        TableSeat(S_ACCESSIBLE),
+                    }),
+
+    };
     Storage::tables = &tables;
 
-    ListManager<Menu> menus_manager(Storage::menus);
-    
-    // cout << *menu;
-    // cout << menu->get_element(3);
-
-    // EmployeeManager<Chef> test(Storage::cheves);
-    // test.add_employee(-1);
-    // test.employees_list(cheves);
+    list<Order> orders = {
+        Order(
+            0,          //creator
+            -1,         // chef
+            -1,         //checkid
+            0,          //table_id
+            O_RECEIVED, //Stattus
+            0,          //branchid
+            {
+                Meal(0, {
+                            MealItem(
+                                1 /*phan*/,
+                                /*tu menu*/ 1,
+                                /*section*/ 1,
+                                /*item*/ 3),
+                            MealItem(
+                                2 /*phan*/,
+                                /*tu menu*/ 1,
+                                /*section*/ 1,
+                                /*item*/ 4),
+                            MealItem(
+                                3 /*phan*/,
+                                /*tu menu*/ 1,
+                                /*section*/ 1,
+                                /*item*/ 5),
+                        })}),
+    };
+    Storage::orders = &orders;
+    cout << tables;
 }

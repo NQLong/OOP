@@ -10,13 +10,13 @@ CPPFLAGS := ...
 CXXFLAGS := ...
 
 all: $(OBJ_FILES) Compiled/main.o
-	g++  -o app $^
+	g++ -g  -o app $^
 
 Compiled/main.o: main.cpp
-	g++  -c -o $@ $<
+	g++ -g -c -o $@ $<
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(HEADER_DIR)/%.h
-	g++ -c -o $@ $<
+	g++ -c -g -o $@ $<
 
 clean:
 	rm -rf app all a.*

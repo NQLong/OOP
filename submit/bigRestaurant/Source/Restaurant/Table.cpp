@@ -255,7 +255,7 @@ void Table::setLocation_id(int location_id)
     this->location_id = location_id;
 }
 
-int Table::getBranch_id()
+int Table::get_branch_id()
 {
     return this->branch_id;
 }
@@ -275,9 +275,9 @@ void Table::setStatus(TableStatus status)
     this->status = status;
 }
 
-list<TableSeat> Table::getSeats()
+list<TableSeat>* Table::getSeats()
 {
-    return this->seats;
+    return &this->seats;
 }
 
 void Table::setSeats(list<TableSeat> seats)

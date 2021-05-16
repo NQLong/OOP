@@ -44,6 +44,7 @@ public:
     Menu* get_menu();
 
     int getBranch_id();
+    int get_id();
     void setBranch_id(int branch_id);
 
     string getName();

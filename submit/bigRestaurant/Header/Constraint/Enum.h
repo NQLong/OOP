@@ -27,6 +27,7 @@ enum ReservationStatus
     R_CANCELED,
     R_ABANDONED
 };
+
 ostream &operator<<(ostream &os,const ReservationStatus &Typ);
 ReservationStatus select_reservation_status();
 
@@ -37,6 +38,7 @@ enum SeatType
     S_ACCESSIBLE,
     S_OTHER
 };
+
 ostream &operator<<(ostream &os,const SeatType &e);
 SeatType select_seat_type();
 

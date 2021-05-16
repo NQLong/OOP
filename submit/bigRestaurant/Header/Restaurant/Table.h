@@ -65,11 +65,11 @@ public:
     void setMax_acpacity(int max_acpacity);
     int getLocation_id();
     void setLocation_id(int location_id);
-    int getBranch_id();
+    int get_branch_id();
     void setBranch_id(int branch_id);
     TableStatus getStatus();
     void setStatus(TableStatus status);
-    list<TableSeat> getSeats();
+    list<TableSeat>* getSeats();
     void setSeats(list<TableSeat> seats);
 };
 

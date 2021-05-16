@@ -13,9 +13,9 @@ public:
     ListManager(void *);
 
     list<T> *get_list();
-
     void set_list(list<T> *employees);
 
+    list<T> get_element_from_branch(int branch);
     bool add_element(T);
     bool add_element(int branch_id);
     bool remove_element();

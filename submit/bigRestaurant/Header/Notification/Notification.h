@@ -15,7 +15,6 @@ private:
     time_t created_on;
     string content;
 
-    static list<Notification> notifications;
 
 public:
     Notification();
@@ -32,10 +31,6 @@ public:
 
     bool send();
 
-    static bool add_notification(Notification);
-    static Notification *get_notification(int id);
-    static list<Notification> *getNotifications();
-    static void setNotifications(list<Notification> notifications);
 
     int getNotification_id();
     void setNotification_id(int notification_id);
@@ -45,6 +40,6 @@ public:
     void setCreated_on(time_t created_on);
     string getContent();
     void setContent(string content);
-}
+};
 
 #endif /* DD445CE6_C34D_4208_8AAE_5AF853B413D3 */
