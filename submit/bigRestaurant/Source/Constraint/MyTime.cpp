@@ -15,6 +15,11 @@ Day::Day(time_t _time)
     this->_time = *localtime(&_time);
 }
 
+time_t Day::get_time_t()
+{
+    return mktime(&this->_time);
+}
+
 tm Day::get_time()
 {
     return _time;
@@ -35,11 +40,13 @@ void Day::reset()
     time_t n = 0;
     this->_time = *gmtime(&n);
 }
+
 void Day::check()
 {
     time_t now = mktime(&_time);
     this->_time = *localtime(&now);
 }
+
 void Day::input()
 {
     int day, month, year;
@@ -186,6 +193,27 @@ ostream &operator<<(ostream &os, const DayTime &_time)
     return os;
 }
 
+bool DayTime::colide(int duration, DayTime other, int other_duration)
+{
+    time_t start = this->get_time_t();
+    time_t end_time = start + duration * SECOND_IN_HOUR;
+    time_t other_start = other.get_time_t();
+    time_t other_end_time = other_start + other_duration * SECOND_IN_HOUR;
+
+    if (start == other_start)
+        return true;
+    else if (start < other_start)
+    {
+        return !(end_time < other_start);
+    }
+    else
+    {
+
+        return !(other_end_time < end_time);
+    }
+
+    return true;
+}
 DayTime DayTime::input_time()
 {
     DayTime temp = input_date();
@@ -208,10 +236,11 @@ DayTime DayTime::input_date()
     return temp;
 }
 
-
-bool operator==(const DayTime &lhs, const DayTime &rhs){
+bool operator==(const DayTime &lhs, const DayTime &rhs)
+{
+    tm left = lhs._time;
+    tm right = rhs._time;
     return (
-        (rhs._time == lhs._time) && 
-        true
-    );
+        (mktime(&left) == mktime(&right)) &&
+        true);
 }

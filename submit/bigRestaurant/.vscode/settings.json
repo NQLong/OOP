@@ -8,6 +8,18 @@
         "ostream": "cpp",
         "iomanip": "cpp",
         "iosfwd": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "list": "cpp",
+        "memory": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "xmemory": "cpp",
+        "xstddef": "cpp",
+        "xstring": "cpp",
+        "algorithm": "cpp",
+        "atomic": "cpp",
+        "xlocmon": "cpp",
+        "xlocnum": "cpp",
+        "xutility": "cpp"
     }
 }

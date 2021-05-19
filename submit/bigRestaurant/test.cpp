@@ -6,11 +6,9 @@
 #include <list>
 #include <sstream>
 
-#include "test.h"
 using namespace std;
 
 int main()
 {
-    for (int i = 0; i < 255; i++)
-        cout << setw(4) << left << i << '¤' << endl;
+    cout<<setw(40)<<left<<"asdc ,asdasd";
 }

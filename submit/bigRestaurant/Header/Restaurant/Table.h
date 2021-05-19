@@ -45,14 +45,15 @@ public:
 
     
     bool add_seat();
-    bool modify_seat();
+    bool modify_seat(); 
     TableSeat* pick_seat();
+    bool is_free();
 
 
     int selectSeatId();
 
     bool modify_table();
-    bool isTableFree();
+    void check(DayTime time, int duration, bool now);
 
     bool add_reservation();
 

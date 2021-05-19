@@ -105,7 +105,8 @@ string lower_string(string in)
 {
     string data = in;
     transform(data.begin(), data.end(), data.begin(),
-              [](unsigned char c) { return tolower(c); });
+              [](unsigned char c)
+              { return tolower(c); });
     return data;
 }
 
@@ -143,4 +144,16 @@ void print_option(list<string> stmts)
 
     cout << endl
          << "Enter your choice: ";
+}
+
+string string_of_list(list<int> lst)
+{
+    string temp;
+    for (auto it = lst.begin(); it != lst.end(); it++)
+    {
+        temp += to_string(*it);
+        if (&*it != &lst.back())
+            temp += ",";
+    }
+    return temp;
 }

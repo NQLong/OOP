@@ -48,8 +48,8 @@ ostream &operator<<(ostream &os, const ReservationStatus &l)
 
     switch (l)
     {
-    case R_REQUESTED:
-        return os << "Requested";
+    // case R_REQUESTED:
+    //     return os << "Requested";
     case R_PENDING:
         return os << "Pending";
     case R_CONFIRMED:
@@ -177,7 +177,7 @@ ostream &operator<<(ostream &os, const TableStatus &l)
     case T_FREE:
         return os << "Free";
     case T_RESERVED:
-        return os << "Waiter";
+        return os << "Reserved";
     case T_OCCUPIED:
         return os << "Occupied";
     case T_OTHER:

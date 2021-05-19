@@ -1,4 +1,5 @@
 #include "../../Header/Restaurant/Table.h"
+#include "../../Header/Manage/ReservationManager.h"
 
 string Table::class_name = "table";
 
@@ -72,6 +73,24 @@ Table::Table(int _location_id, int _branch_id, list<TableSeat> _seats)
     this->set_list(&this->seats);
 }
 
+void Table::check(DayTime _time, int duration, bool now)
+{
+    DayTime time = _time;
+    if (now && this->status != T_FREE)
+        return;
+    list<Reservation> lst = ReservationManager(Storage::reservations).get_confirmed_reservations_for_table(this->table_id);
+    auto it = lst.begin();
+    int n = lst.size();
+    for (int i = 0; i < n; i++)
+    {
+
+        if (time.colide(duration, it->getTime_of_reservation(), it->get_duration()))
+        {
+            this->setStatus(T_RESERVED);
+            return;
+        }
+    }
+}
 int Table::selectSeatId()
 {
     cout << seats;
@@ -275,7 +294,7 @@ void Table::setStatus(TableStatus status)
     this->status = status;
 }
 
-list<TableSeat>* Table::getSeats()
+list<TableSeat> *Table::getSeats()
 {
     return &this->seats;
 }

@@ -8,6 +8,9 @@
 #include "Header/Meal/MealItem.h"
 #include "Header/Meal/Meal.h"
 #include "Header/Order/Order.h"
+#include "Header/Reservation/Reservation.h"
+#include "Header/Manage/ReservationManager.h"
+
 int main()
 {
 
@@ -143,5 +146,35 @@ int main()
                         })}),
     };
     Storage::orders = &orders;
-    cout << tables;
+    list<Reservation> reservations =
+        {
+            Reservation(
+                time(0) + SECOND_IN_HOUR / 2,
+                10,
+                R_CONFIRMED,
+                "",
+                0,
+                -1,
+                {0, 1, 2},
+                {},
+                0,
+                3),
+            Reservation(
+                time(0) + 4 * SECOND_IN_DAY,
+                10,
+                R_PENDING,
+                "",
+                0,
+                -1,
+                {},
+                {},
+                0,
+                3),
+        };
+    Storage::reservations = &reservations;
+    ReservationManager manage = ReservationManager(Storage::reservations);
+    cout << reservations;
+    // wait();
+    // manage.get_last()->confirm();
+    // cout << *manage.get_last();
 }

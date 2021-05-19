@@ -15,8 +15,7 @@
 #include "MyTime.h"
 #include "Storage.h"
 
-#define SECOND_IN_DAY 86400
-#define SECOND_IN_HOUR 3600
+
 
 
 
@@ -57,6 +56,7 @@ string input_str(string stm);
 
 string string_of_time(time_t);
 
+string string_of_list(list<int>);
 void print_option(list<string>);
 
 #endif /* B7E5AD63_D675_4BF5_ADCA_80920130FD08 */

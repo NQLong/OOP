@@ -20,7 +20,6 @@ EmployeeType select_employee_typ();
 
 enum ReservationStatus
 {
-    R_REQUESTED,
     R_PENDING,
     R_CONFIRMED,
     R_CHECKED_IN,
