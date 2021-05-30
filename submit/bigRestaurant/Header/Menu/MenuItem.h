@@ -14,7 +14,8 @@
 #include <iomanip>
 #include <string>
 
-#include "../Constraint/constraint.h"
+#include "../Constraint/Constraint.h"
+
 
 using namespace std;
 class MenuItem

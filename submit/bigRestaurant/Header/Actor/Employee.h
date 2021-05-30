@@ -5,7 +5,7 @@
 #include "Actor.h"
 #include <ctime>
 #include "Account.h"
-#include "../Constraint/constraint.h"
+#include "../Constraint/Constraint.h"
 
 #include <iomanip>
 
@@ -20,16 +20,16 @@ private:
     EmployeeType Typ;
 
     static int new_id;
-    
+
 public:
     Employee();
     ~Employee();
 
-    Employee(string _name, Account _account, string _email, string _phone, EmployeeType _Typ) 
-    : Person(_name, _email, _phone), employee_id(new_id++), account(_account), date_joined(time(0)), Typ(_Typ) {}
+    Employee(string _name, Account _account, string _email, string _phone, EmployeeType _Typ)
+        : Person(_name, _email, _phone), employee_id(new_id++), account(_account), date_joined(time(0)), Typ(_Typ) {}
 
-    Employee(string _name, Account _account, string _email, string _phone, EmployeeType _Typ, int _branch_id) 
-    : Person(_name, _email, _phone), employee_id(new_id++), account(_account), date_joined(time(0)), Typ(_Typ), branch_id(_branch_id) {}
+    Employee(string _name, Account _account, string _email, string _phone, EmployeeType _Typ, int _branch_id)
+        : Person(_name, _email, _phone), employee_id(new_id++), account(_account), date_joined(time(0)), Typ(_Typ), branch_id(_branch_id) {}
 
     void *getBranch();
 

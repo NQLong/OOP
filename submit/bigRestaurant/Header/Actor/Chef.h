@@ -7,7 +7,7 @@
 
 //     def take_order(self):
 //         None
-#include "../../Header/Constraint/constraint.h"
+#include "../Constraint/Constraint.h"
 #include "Employee.h"
 
 class Chef : public Employee
@@ -17,11 +17,9 @@ private:
 public:
     Chef();
     ~Chef();
-    Chef( string _name, Account _account, string _email, string _phone) :
-    Employee( _name, _account, _email, _phone,CHEF) {}
-    Chef( string _name, Account _account, string _email, string _phone, int _branch_id) :
-    Employee( _name, _account, _email, _phone,CHEF, _branch_id) {}
-    
+    Chef(string _name, Account _account, string _email, string _phone) : Employee(_name, _account, _email, _phone, CHEF) {}
+    Chef(string _name, Account _account, string _email, string _phone, int _branch_id) : Employee(_name, _account, _email, _phone, CHEF, _branch_id) {}
+
     bool prepare_order();
     bool complete_order();
 

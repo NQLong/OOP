@@ -9,30 +9,30 @@
 //     def add_table_chart(self):
 //         None
 #include "Kitchen.h"
-#include "../../Header/Constraint/constraint.h"
+#include "../Constraint/Constraint.h"
 #include "../Menu/Menu.h"
 
 class Branch
 {
 private:
-    int branch_id; 
+    int branch_id;
     string name;
     Address location;
     Kitchen kitchen;
-    
+
     int menu_id = -1;
 
-
     static int new_id;
+
 public:
     Branch();
-    Branch(string _name, Address _location) 
-    :branch_id(new_id++), name(_name), location(_location) {}
-    Branch(string _name, Address _location, Kitchen _kitchen) 
-    :branch_id(new_id++), name(_name), location(_location), kitchen(_kitchen) {}
-    Branch(string _name, Address _location, Kitchen _kitchen, int _menu_id) 
-    :branch_id(new_id++), name(_name), location(_location), kitchen(_kitchen), menu_id(_menu_id) {}
-    
+    Branch(string _name, Address _location)
+        : branch_id(new_id++), name(_name), location(_location) {}
+    Branch(string _name, Address _location, Kitchen _kitchen)
+        : branch_id(new_id++), name(_name), location(_location), kitchen(_kitchen) {}
+    Branch(string _name, Address _location, Kitchen _kitchen, int _menu_id)
+        : branch_id(new_id++), name(_name), location(_location), kitchen(_kitchen), menu_id(_menu_id) {}
+
     ~Branch() {}
 
     static Branch inputBranch();
@@ -41,7 +41,7 @@ public:
 
     bool modify_menu();
     bool add_menu();
-    Menu* get_menu();
+    Menu *get_menu();
 
     int getBranch_id();
     int get_id();
@@ -50,17 +50,15 @@ public:
     string getName();
     void setName(string name);
 
-    Address* getLocation();
+    Address *getLocation();
 
     void setLocation(Address location);
 
-    Kitchen* getKitchen();
+    Kitchen *getKitchen();
     void setKitchen(Kitchen kitchen);
 
     int getMenu_id();
     void setMenu_id(int menu_id);
-
-    
 };
 
 #endif /* A339ABF1_A3D1_4BE9_B9CB_4AD67E24FF65 */

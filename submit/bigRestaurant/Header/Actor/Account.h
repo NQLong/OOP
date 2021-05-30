@@ -1,7 +1,7 @@
 #ifndef E610AF7F_9477_40F6_947A_4AA6CC3B5A50
 #define E610AF7F_9477_40F6_947A_4AA6CC3B5A50
 
-#include "../../Header/Constraint/constraint.h"
+#include "../Constraint/Constraint.h"
 
 class Account
 {
@@ -13,11 +13,10 @@ private:
 
 public:
     Account() {}
-    Account(string _username, string _password, Address _address, AccountStatus _status) : 
-    username(_username),password(_password), address(_address), status(_status) {}
+    Account(string _username, string _password, Address _address, AccountStatus _status) : username(_username), password(_password), address(_address), status(_status) {}
 
     ~Account() {}
-    
+
     static Account inputAccount();
     void modify_account();
 
@@ -36,8 +35,6 @@ public:
     bool resetPassword();
 
     friend ostream &operator<<(ostream &os, const Account &);
-
-    
 };
 
 #endif /* E610AF7F_9477_40F6_947A_4AA6CC3B5A50 */

@@ -10,7 +10,8 @@
 #include "Employee.h"
 #include "Actor.h"
 #include "../Restaurant/Restaurant.h"
-#include "../Constraint/constraint.h"
+#include "../Constraint/Constraint.h"
+
 #include "../Restaurant/Table.h"
 
 class Manager : public Employee
