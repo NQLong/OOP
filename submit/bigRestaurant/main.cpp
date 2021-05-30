@@ -10,7 +10,7 @@
 #include "Header/Order/Order.h"
 #include "Header/Reservation/Reservation.h"
 #include "Header/Manage/ReservationManager.h"
-
+#include "Header/View/View.h"
 int main()
 {
 
@@ -172,9 +172,14 @@ int main()
                 3),
         };
     Storage::reservations = &reservations;
-    ReservationManager manage = ReservationManager(Storage::reservations);
-    cout << reservations;
-    // wait();
-    // manage.get_last()->confirm();
-    // cout << *manage.get_last();
+
+    list<Receptionist> receptionists = {
+        Receptionist(
+            "Receptionist",
+            Account("3", "3", address, A_ACTIVE),
+            "Receptionist", "0123456", 0),
+    };
+    Storage::recetionists = &receptionists;
+    View view;
+    view.startApp();
 }

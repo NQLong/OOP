@@ -3,15 +3,7 @@
 
 #include "Employee.h"
 #include "../../Header/Order/Order.h"
-// class Receptionist(Employee):
-//     def __init__(self, id, account, name, email, phone):
-//         super().__init__(id, account, name, email, phone)
-
-//     def create_reservation(self):
-//         None
-
-//     def search_customer(self, name):
-//         None
+#include "../../Header/Manage/ReservationManager.h"
 
 class Receptionist : public Employee
 // , public iActor
@@ -20,11 +12,12 @@ private:
 public:
     Receptionist();
     ~Receptionist();
-    Receptionist( string _name, Account _account, string _email, string _phone)
-        : Employee( _name, _account, _email, _phone, RECEPTIONIST) {}
-    Receptionist( string _name, Account _account, string _email, string _phone, int _branch_id)
-        : Employee( _name, _account, _email, _phone, RECEPTIONIST, _branch_id) {}
+    Receptionist(string _name, Account _account, string _email, string _phone)
+        : Employee(_name, _account, _email, _phone, RECEPTIONIST) {}
+    Receptionist(string _name, Account _account, string _email, string _phone, int _branch_id)
+        : Employee(_name, _account, _email, _phone, RECEPTIONIST, _branch_id) {}
 
+    void reservations_manage();
     bool create_reservation();
     void view();
     bool process_payment();

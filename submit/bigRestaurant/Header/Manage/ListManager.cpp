@@ -87,6 +87,9 @@ bool ListManager<T>::remove_element(T t)
 }
 
 template <typename T>
+void ListManager<T>::view_elements(int, int) {}
+
+template <typename T>
 T *ListManager<T>::pick_element()
 {
     int id;
@@ -129,7 +132,7 @@ T *ListManager<T>::pick_element(int branch_id)
 // }
 
 template <typename T>
-void ListManager<T>::manage_elements()
+void ListManager<T>::manage_elements(int branch)
 {
     int option;
     bool loop = true;
@@ -148,7 +151,7 @@ void ListManager<T>::manage_elements()
         {
         case 1:
             clear();
-            add_element();
+            add_element(branch);
             wait();
             break;
         case 2:
@@ -164,7 +167,7 @@ void ListManager<T>::manage_elements()
             break;
         case 4:
             clear();
-            // employees_list();
+            view_elements(0,0);
             wait();
             break;
 

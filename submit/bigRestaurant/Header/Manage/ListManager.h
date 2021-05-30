@@ -35,7 +35,8 @@ public:
         return NULL;
     }
     T *get_last();
-    void manage_elements();
+    void view_elements(int, int);
+    void manage_elements(int);
 };
 
 #include "ListManager.cpp"

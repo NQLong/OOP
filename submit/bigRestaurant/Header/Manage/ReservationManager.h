@@ -11,8 +11,8 @@ public:
     ReservationManager(void *ptr) : ListManager<Reservation>(ptr) {}
 
     list<Reservation> get_confirmed_reservations_for_table(int table);
+
+    void view_elements(int branch, int status);
 };
-
-
 
 #endif /* AE8D4D28_6A84_4D90_BC72_93B80D0588E1 */

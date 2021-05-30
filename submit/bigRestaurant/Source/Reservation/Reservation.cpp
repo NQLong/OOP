@@ -86,6 +86,7 @@ ostream &operator<<(ostream &os, const Reservation &r)
 }
 bool operator==(const Reservation &, const Reservation &)
 {
+    return true;
 }
 Reservation::Reservation(
     time_t _time_of_reservation,
@@ -168,6 +169,7 @@ bool Reservation::confirm()
 
 bool Reservation::is_colided(Reservation *other)
 {
+    return true;
 }
 
 int Reservation::total_seat()

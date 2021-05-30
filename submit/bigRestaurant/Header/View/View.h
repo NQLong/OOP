@@ -9,6 +9,7 @@
 #include "../Actor/Manager.h"
 #include "../Actor/Receptionist.h"
 #include "../Actor/Waiter.h"
+#include "../Manage/EmployeeManager.h"
 #include "../Restaurant/Restaurant.h"
 
 class View
